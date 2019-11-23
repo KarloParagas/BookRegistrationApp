@@ -44,7 +44,16 @@ namespace BookRegistration
             //set the new book into that property
             NewBook = b;
 
-            DialogResult = DialogResult.OK;
+            try
+            {
+                //Add the book to the database
+                BookDB.Add(b);
+                DialogResult = DialogResult.OK;
+            }
+            catch 
+            {
+                MessageBox.Show("We're having server issues");
+            }
         }
     }
 }
