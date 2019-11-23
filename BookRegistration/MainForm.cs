@@ -67,11 +67,16 @@ namespace BookRegistration
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            PopulateCustomerList();
+        }
+
+        private void PopulateCustomerList()
+        {
             //Populate the list of customers from the database
             List<Customer> allCustomers = CustomerDB.GetAllCustomers();
 
             //Adds all of the customers from the database in the customersComboBox 
-            foreach (Customer c in allCustomers) 
+            foreach (Customer c in allCustomers)
             {
                 customerComboBox.Items.Add(c);
             }
@@ -80,7 +85,7 @@ namespace BookRegistration
             List<Book> allBooks = BookDB.GetAllBooks();
 
             //Adds all of the books from the database in the bookComboBox
-            foreach (Book b in allBooks) 
+            foreach (Book b in allBooks)
             {
                 bookComboBox.Items.Add(b);
             }
