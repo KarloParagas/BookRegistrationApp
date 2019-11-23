@@ -87,7 +87,7 @@ namespace BookRegistration
             finally
             {
                 //Since finally always runs, it's good to always to clean up the connection object
-                //Ensures connection and deletes object
+                //Ensures the connection is closed and deletes object
                 connection.Dispose();
             }
         }
@@ -97,9 +97,41 @@ namespace BookRegistration
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Adds a customer to the database
+        /// </summary>
+        /// <exception cref="SqlException"></exception>
+        /// <param name="c">Customer to be added</param>
         public static void Add(Customer c) 
         {
-            throw new NotImplementedException();
+            SqlConnection connection = DBHelper.GetConnection();
+
+            //Create a parametarized query
+            SqlCommand addCommand = new SqlCommand();
+            addCommand.Connection = connection;
+            addCommand.CommandText = "INSERT INTO Customer (DateOfBirth, FirstName, LastName, Title) " +
+                                     "VALUES (@DateOfBirth, @FirstName, @LastName, @Title)";
+
+            //Populate each of the parameters with a value
+            //Must match the properties in Customer.cs
+            //Note: CustomerID isn't needed because it's a primary key, it does it automatically
+            addCommand.Parameters.AddWithValue("@DateOfBirth", c.DateOfBirth);
+            addCommand.Parameters.AddWithValue("@FirstName", c.FirstName);
+            addCommand.Parameters.AddWithValue("@LastName", c.LastName);
+            addCommand.Parameters.AddWithValue("@Title", c.Title);
+
+            try
+            {
+                connection.Open();
+
+                //Execute the query, and get the customer into the database
+                addCommand.ExecuteNonQuery();
+            }
+            finally 
+            {
+                //Ensure the connection is closed and deletes the object
+                connection.Dispose();
+            }
         }
     }
 }
