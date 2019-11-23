@@ -68,6 +68,8 @@ namespace BookRegistration
         private void MainForm_Load(object sender, EventArgs e)
         {
             PopulateCustomerList();
+
+            PopulateBookList();
         }
 
         private void PopulateCustomerList()
@@ -80,7 +82,10 @@ namespace BookRegistration
             {
                 customerComboBox.Items.Add(c);
             }
+        }
 
+        private void PopulateBookList()
+        {
             //Populate the list of books from the database
             List<Book> allBooks = BookDB.GetAllBooks();
 
