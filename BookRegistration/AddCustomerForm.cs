@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,14 +38,25 @@ namespace BookRegistration
             {
                 FirstName = firstNameTxt.Text,
                 LastName = lastNameTxt.Text,
-                DateOfBirth = dateOfBirthPicker.Value
+                DateOfBirth = dateOfBirthPicker.Value,
+                Title = titleTxt.Text
             };
 
             //Once a customer object has been created, 
             //set the new customer into that property
             NewCustomer = c;
 
-            DialogResult = DialogResult.OK;
+            try
+            {
+                //Add the customer to the database
+                CustomerDB.Add(c);
+                DialogResult = DialogResult.OK;
+            }
+            catch (SqlException) 
+            {
+                MessageBox.Show("We're having server issues.");
+            }
+
         }
     }
 }
