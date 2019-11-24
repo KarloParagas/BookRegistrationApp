@@ -41,7 +41,7 @@ namespace BookRegistration
             };
 
             //Once a book object has been created, 
-            //set the new book into that property
+            //set the new book into that property (Book.cs)
             NewBook = b;
 
             try

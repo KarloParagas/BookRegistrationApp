@@ -43,7 +43,7 @@ namespace BookRegistration
             };
 
             //Once a customer object has been created, 
-            //set the new customer into that property
+            //set the new customer into that property (Customer.cs)
             NewCustomer = c;
 
             try
