@@ -87,6 +87,7 @@
             this.registerBookButton.TabIndex = 5;
             this.registerBookButton.Text = "Register Book";
             this.registerBookButton.UseVisualStyleBackColor = true;
+            this.registerBookButton.Click += new System.EventHandler(this.registerBookButton_Click);
             // 
             // MainForm
             // 

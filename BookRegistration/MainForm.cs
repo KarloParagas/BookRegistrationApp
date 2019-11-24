@@ -65,6 +65,11 @@ namespace BookRegistration
             }
         }
 
+        private void registerBookButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             PopulateCustomerList();
