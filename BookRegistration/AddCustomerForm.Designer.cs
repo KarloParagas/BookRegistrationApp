@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 71);
+            this.label1.Location = new System.Drawing.Point(14, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 105);
+            this.label2.Location = new System.Drawing.Point(14, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 1;
@@ -59,14 +59,14 @@
             // 
             // firstNameTxt
             // 
-            this.firstNameTxt.Location = new System.Drawing.Point(103, 64);
+            this.firstNameTxt.Location = new System.Drawing.Point(103, 28);
             this.firstNameTxt.Name = "firstNameTxt";
             this.firstNameTxt.Size = new System.Drawing.Size(97, 20);
             this.firstNameTxt.TabIndex = 2;
             // 
             // lastNameTxt
             // 
-            this.lastNameTxt.Location = new System.Drawing.Point(103, 99);
+            this.lastNameTxt.Location = new System.Drawing.Point(103, 63);
             this.lastNameTxt.Name = "lastNameTxt";
             this.lastNameTxt.Size = new System.Drawing.Size(97, 20);
             this.lastNameTxt.TabIndex = 3;
@@ -101,7 +101,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 35);
+            this.label4.Location = new System.Drawing.Point(14, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 8;
@@ -109,7 +109,7 @@
             // 
             // titleTxt
             // 
-            this.titleTxt.Location = new System.Drawing.Point(103, 28);
+            this.titleTxt.Location = new System.Drawing.Point(103, 99);
             this.titleTxt.Name = "titleTxt";
             this.titleTxt.Size = new System.Drawing.Size(97, 20);
             this.titleTxt.TabIndex = 9;
