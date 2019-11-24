@@ -28,7 +28,7 @@ namespace BookRegistration
         /// </summary>
         public Book NewBook { get; set; }
 
-        private void RegBookBtn_Click(object sender, EventArgs e)
+        private void AddBookBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Saved the book to the database");
 

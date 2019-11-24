@@ -29,7 +29,7 @@ namespace BookRegistration
         /// </summary>
         public Customer NewCustomer { get; set; }
 
-        private void RegCustomerBtn_Click(object sender, EventArgs e)
+        private void AddCustomerBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Customer has been saved to the database");
 
