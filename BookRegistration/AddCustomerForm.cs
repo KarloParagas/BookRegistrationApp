@@ -51,12 +51,13 @@ namespace BookRegistration
                 //Add the customer to the database
                 CustomerDB.Add(c);
                 DialogResult = DialogResult.OK;
+
+                //TODO: Refresh the list when a new book is added to the database
             }
             catch (SqlException) 
             {
                 MessageBox.Show("We're having server issues.");
             }
-
         }
     }
 }

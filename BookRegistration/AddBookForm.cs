@@ -49,6 +49,8 @@ namespace BookRegistration
                 //Add the book to the database
                 BookDB.Add(b);
                 DialogResult = DialogResult.OK;
+
+                //TODO: Refresh the list when a new book is added to the database
             }
             catch 
             {
