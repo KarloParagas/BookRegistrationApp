@@ -22,6 +22,6 @@ namespace BookRegistration
         /// <summary>
         /// Date of the book's registration
         /// </summary>
-        public DateTime RegisterDate { get; set; }
+        public DateTime RegDate { get; set; }
     }
 }
