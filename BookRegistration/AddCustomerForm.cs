@@ -49,10 +49,8 @@ namespace BookRegistration
             try
             {
                 //Add the customer to the database
-                CustomerDB.Add(c);
-                DialogResult = DialogResult.OK;
-
-                //TODO: Refresh the list when a new book is added to the database
+                CustomerDB.Add(c); //This .add is from CustomerDB's add method
+                DialogResult = DialogResult.OK;             
             }
             catch (SqlException) 
             {

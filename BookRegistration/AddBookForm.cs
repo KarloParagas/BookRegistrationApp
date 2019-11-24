@@ -47,10 +47,8 @@ namespace BookRegistration
             try
             {
                 //Add the book to the database
-                BookDB.Add(b);
+                BookDB.Add(b); //This .add is from BookDB's add method
                 DialogResult = DialogResult.OK;
-
-                //TODO: Refresh the list when a new book is added to the database
             }
             catch 
             {
