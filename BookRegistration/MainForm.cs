@@ -29,12 +29,9 @@ namespace BookRegistration
             //If user adds a customer
             if (result == DialogResult.OK)
             {
-                //Using the addCustomer object above from AddCustomerForm,
-                //grab the NewCustomer that was created
-                Customer c = addCustomer.NewCustomer;
-
-                //Adds the customer to the customerComboBox
-                customerComboBox.Items.Add(c);
+                //Repopulate/Refresh the list from the customer database
+                //Note: PopulateCustomerList method must clear the combo box before repopulating in order for the refresh to work
+                PopulateCustomerList();
             }
             else 
             {
@@ -53,12 +50,9 @@ namespace BookRegistration
             //If user adds a book
             if (result == DialogResult.OK) 
             {
-                //Using the addBook object above from AddBookForm,
-                //grab the newBook that was created
-                Book b = addBook.NewBook;
-
-                //Adds the book to the bookComboBox
-                bookComboBox.Items.Add(b);
+                //Repopulate/Refresh the list from the book database
+                //Note: PopulateBookList method must clear the combo box before repopulating in order for the refresh to work
+                PopulateBookList();
             }
             else 
             {
@@ -108,6 +102,9 @@ namespace BookRegistration
             //Populate the list of customers from the database
             List<Customer> allCustomers = CustomerDB.GetAllCustomers();
 
+            //Start with an empty list, so it doesn't re-add previous books causing duplicates
+            customerComboBox.Items.Clear();
+
             //Adds all of the customers from the database in the customersComboBox 
             foreach (Customer c in allCustomers)
             {
@@ -119,6 +116,9 @@ namespace BookRegistration
         {
             //Populate the list of books from the database
             List<Book> allBooks = BookDB.GetAllBooks();
+
+            //Start with an empty list, so it doesn't re-add previous books causing duplicates
+            bookComboBox.Items.Clear();
 
             //Adds all of the books from the database in the bookComboBox
             foreach (Book b in allBooks)
