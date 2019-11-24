@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -65,9 +66,54 @@ namespace BookRegistration
             }
         }
 
+        public Registration NewReg { get; set; }
+
         private void registerBookButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //Get the selected customer
+            Customer c = (Customer)customerComboBox.SelectedItem;
+
+            //Grab the selected book
+            Book b = (Book)bookComboBox.SelectedItem;
+
+            //Create a registration object
+            Registration regBook = new Registration()
+            {
+                //Get the selected customer's CustomerID
+                CustomerID = c.CustomerID,
+
+                //Get the selected book's ISBN
+                ISBN = b.ISBN,
+
+                //Get the register date
+                RegDate = dateRegisteredPicker.Value
+            };
+
+            //Once the registration object has been created
+            //set the new registration into the property (Registration.cs)
+            NewReg = regBook;
+
+            try
+            {
+                //Add the registration to the database
+                BookRegistrationDB.Add(regBook);
+                DialogResult = DialogResult.OK;
+
+                MessageBox.Show("Customer and book has been registered");
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("We're having server issues");
+            }
+
+            //if (BookRegistrationDB.RegisterBook() == true)
+            //{
+
+            //}
+            //else 
+            //{
+            //    MessageBox.Show("We're having server issues");
+            //}
         }
 
         private void MainForm_Load(object sender, EventArgs e)
