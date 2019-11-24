@@ -33,7 +33,7 @@
             this.firstNameTxt = new System.Windows.Forms.TextBox();
             this.lastNameTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.RegCustomerBtn = new System.Windows.Forms.Button();
+            this.AddCustomerBtn = new System.Windows.Forms.Button();
             this.dateOfBirthPicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.titleTxt = new System.Windows.Forms.TextBox();
@@ -80,15 +80,15 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Date Of Birth:";
             // 
-            // RegCustomerBtn
+            // AddCustomerBtn
             // 
-            this.RegCustomerBtn.Location = new System.Drawing.Point(103, 177);
-            this.RegCustomerBtn.Name = "RegCustomerBtn";
-            this.RegCustomerBtn.Size = new System.Drawing.Size(97, 23);
-            this.RegCustomerBtn.TabIndex = 6;
-            this.RegCustomerBtn.Text = "Register Customer";
-            this.RegCustomerBtn.UseVisualStyleBackColor = true;
-            this.RegCustomerBtn.Click += new System.EventHandler(this.RegCustomerBtn_Click);
+            this.AddCustomerBtn.Location = new System.Drawing.Point(103, 177);
+            this.AddCustomerBtn.Name = "AddCustomerBtn";
+            this.AddCustomerBtn.Size = new System.Drawing.Size(97, 23);
+            this.AddCustomerBtn.TabIndex = 6;
+            this.AddCustomerBtn.Text = "Add Customer";
+            this.AddCustomerBtn.UseVisualStyleBackColor = true;
+            this.AddCustomerBtn.Click += new System.EventHandler(this.AddCustomerBtn_Click);
             // 
             // dateOfBirthPicker
             // 
@@ -122,7 +122,7 @@
             this.Controls.Add(this.titleTxt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateOfBirthPicker);
-            this.Controls.Add(this.RegCustomerBtn);
+            this.Controls.Add(this.AddCustomerBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lastNameTxt);
             this.Controls.Add(this.firstNameTxt);
@@ -142,7 +142,7 @@
         private System.Windows.Forms.TextBox firstNameTxt;
         private System.Windows.Forms.TextBox lastNameTxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button RegCustomerBtn;
+        private System.Windows.Forms.Button AddCustomerBtn;
         private System.Windows.Forms.DateTimePicker dateOfBirthPicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox titleTxt;

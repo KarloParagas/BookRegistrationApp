@@ -34,7 +34,7 @@
             this.isbnTxt = new System.Windows.Forms.TextBox();
             this.titleTxt = new System.Windows.Forms.TextBox();
             this.priceTxt = new System.Windows.Forms.TextBox();
-            this.RegBookBtn = new System.Windows.Forms.Button();
+            this.AddBookBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -85,22 +85,22 @@
             this.priceTxt.Size = new System.Drawing.Size(100, 20);
             this.priceTxt.TabIndex = 5;
             // 
-            // RegBookBtn
+            // AddBookBtn
             // 
-            this.RegBookBtn.Location = new System.Drawing.Point(208, 100);
-            this.RegBookBtn.Name = "RegBookBtn";
-            this.RegBookBtn.Size = new System.Drawing.Size(75, 23);
-            this.RegBookBtn.TabIndex = 6;
-            this.RegBookBtn.Text = "Register Book";
-            this.RegBookBtn.UseVisualStyleBackColor = true;
-            this.RegBookBtn.Click += new System.EventHandler(this.RegBookBtn_Click);
+            this.AddBookBtn.Location = new System.Drawing.Point(208, 100);
+            this.AddBookBtn.Name = "AddBookBtn";
+            this.AddBookBtn.Size = new System.Drawing.Size(75, 23);
+            this.AddBookBtn.TabIndex = 6;
+            this.AddBookBtn.Text = "Add Book";
+            this.AddBookBtn.UseVisualStyleBackColor = true;
+            this.AddBookBtn.Click += new System.EventHandler(this.AddBookBtn_Click);
             // 
             // AddBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 155);
-            this.Controls.Add(this.RegBookBtn);
+            this.Controls.Add(this.AddBookBtn);
             this.Controls.Add(this.priceTxt);
             this.Controls.Add(this.titleTxt);
             this.Controls.Add(this.isbnTxt);
@@ -122,6 +122,6 @@
         private System.Windows.Forms.TextBox isbnTxt;
         private System.Windows.Forms.TextBox titleTxt;
         private System.Windows.Forms.TextBox priceTxt;
-        private System.Windows.Forms.Button RegBookBtn;
+        private System.Windows.Forms.Button AddBookBtn;
     }
 }
