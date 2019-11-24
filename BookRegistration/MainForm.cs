@@ -93,27 +93,8 @@ namespace BookRegistration
             //set the new registration into the property (Registration.cs)
             NewReg = regBook;
 
-            try
-            {
-                //Add the registration to the database
-                BookRegistrationDB.Add(regBook);
-                DialogResult = DialogResult.OK;
-
-                MessageBox.Show("Customer and book has been registered");
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("We're having server issues");
-            }
-
-            //if (BookRegistrationDB.RegisterBook() == true)
-            //{
-
-            //}
-            //else 
-            //{
-            //    MessageBox.Show("We're having server issues");
-            //}
+            //Add the registration to the database
+            BookRegistrationDB.RegisterBook(regBook);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
