@@ -100,7 +100,6 @@ namespace BookRegistration
         private void MainForm_Load(object sender, EventArgs e)
         {
             PopulateCustomerList();
-
             PopulateBookList();
         }
 
