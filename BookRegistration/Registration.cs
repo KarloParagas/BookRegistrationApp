@@ -18,5 +18,10 @@ namespace BookRegistration
         /// The book's serial number
         /// </summary>
         public string ISBN { get; set; }
+
+        /// <summary>
+        /// Date of the book's registration
+        /// </summary>
+        public DateTime RegisterDate { get; set; }
     }
 }
