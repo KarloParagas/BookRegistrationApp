@@ -50,54 +50,6 @@ namespace BookRegistration
         }
 
         /// <summary>
-        /// Deletes a single customer from the database
-        /// </summary>
-        /// <exception cref="SqlException">There was an issue with the database</exception>
-        /// <exception cref="Exception">Thrown when no customer is deleted</exception>
-        /// <param name="id">The CustomerID of the customer to be deleted</param>
-        public static void Delete(int id) 
-        {
-            SqlConnection connection = DBHelper.GetConnection();
-
-            //Create a parameterized query
-            string query = "DELETE FROM Customer " +
-                           "WHERE CustomerID = @CustomerID";
-            SqlCommand deleteCommand = new SqlCommand(query, connection);
-            deleteCommand.Parameters.AddWithValue("@CustomerID", id);
-
-            try
-            {
-                connection.Open();
-
-                //If the connection opens successfully, execute query below
-                int rowsAffected = deleteCommand.ExecuteNonQuery();
-
-                if (rowsAffected == 0) //If nothing was deleted 
-                {
-                    throw new Exception("There is no customer with that ID");
-                }
-            }
-            catch (SqlException ex) 
-            {
-                Console.WriteLine(ex.GetType().ToString());
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-                throw ex;
-            }
-            finally
-            {
-                //Since finally always runs, it's good to always to clean up the connection object
-                //Ensures the connection is closed and deletes object
-                connection.Dispose();
-            }
-        }
-
-        public static void Update(Customer c) 
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
         /// Adds a customer to the database
         /// </summary>
         /// <exception cref="SqlException"></exception>

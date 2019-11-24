@@ -48,54 +48,6 @@ namespace BookRegistration
         }
 
         /// <summary>
-        /// Deletes a single book from the database
-        /// </summary>
-        /// <exception cref="SqlException">There was an issue with the database</exception>
-        /// <exception cref="Exception">Thrown when no book is deleted</exception>
-        /// <param name="isbn">The serial book number to be deleted</param>
-        public static void Delete(string isbn)
-        {
-            SqlConnection connection = DBHelper.GetConnection();
-
-            //Create a parameterized query
-            string query = "DELETE FROM Book " +
-                           "WHERE ISBN = @ISBN";
-            SqlCommand deleteCommand = new SqlCommand(query, connection);
-            deleteCommand.Parameters.AddWithValue("@ISBN", isbn);
-
-            try
-            {
-                connection.Open();
-
-                //If the connection opens successfully, execute query below
-                int rowsAffected = deleteCommand.ExecuteNonQuery();
-
-                if (rowsAffected == 0) //If nothing was deleted 
-                {
-                    throw new Exception("There is no book with that ISBN");
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine(ex.GetType().ToString());
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-                throw ex;
-            }
-            finally 
-            {
-                //Since finally always runs, it's good to always to clean up the connection object
-                //Ensures the connection is closed and deletes object
-                connection.Dispose();
-            }
-        }
-
-        public static void Update(Book b)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
         /// Adds a book to the database
         /// </summary>
         /// <exception cref="SqlException"></exception>
