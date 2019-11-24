@@ -66,7 +66,7 @@ namespace BookRegistration
         /// </summary>
         public Registration NewReg { get; set; }
 
-        private void registerBookButton_Click(object sender, EventArgs e)
+        private void registerProductButton_Click(object sender, EventArgs e)
         {
             //Create a RegistrationConfirmationForm object
             RegisterConfirmationForm confirm = new RegisterConfirmationForm();
