@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateRegisteredComboBox = new System.Windows.Forms.DateTimePicker();
+            this.dateRegisteredPicker = new System.Windows.Forms.DateTimePicker();
             this.customerComboBox = new System.Windows.Forms.ComboBox();
             this.bookComboBox = new System.Windows.Forms.ComboBox();
             this.addCustomerButton = new System.Windows.Forms.Button();
@@ -36,12 +36,12 @@
             this.registerBookButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // dateRegisteredComboBox
+            // dateRegisteredPicker
             // 
-            this.dateRegisteredComboBox.Location = new System.Drawing.Point(47, 219);
-            this.dateRegisteredComboBox.Name = "dateRegisteredComboBox";
-            this.dateRegisteredComboBox.Size = new System.Drawing.Size(200, 20);
-            this.dateRegisteredComboBox.TabIndex = 0;
+            this.dateRegisteredPicker.Location = new System.Drawing.Point(47, 219);
+            this.dateRegisteredPicker.Name = "dateRegisteredPicker";
+            this.dateRegisteredPicker.Size = new System.Drawing.Size(200, 20);
+            this.dateRegisteredPicker.TabIndex = 0;
             // 
             // customerComboBox
             // 
@@ -99,7 +99,7 @@
             this.Controls.Add(this.addCustomerButton);
             this.Controls.Add(this.bookComboBox);
             this.Controls.Add(this.customerComboBox);
-            this.Controls.Add(this.dateRegisteredComboBox);
+            this.Controls.Add(this.dateRegisteredPicker);
             this.Name = "MainForm";
             this.Text = "Book Registration";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -109,7 +109,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateRegisteredComboBox;
+        private System.Windows.Forms.DateTimePicker dateRegisteredPicker;
         private System.Windows.Forms.ComboBox customerComboBox;
         private System.Windows.Forms.ComboBox bookComboBox;
         private System.Windows.Forms.Button addCustomerButton;
