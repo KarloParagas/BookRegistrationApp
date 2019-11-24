@@ -33,7 +33,7 @@
             this.bookComboBox = new System.Windows.Forms.ComboBox();
             this.addCustomerButton = new System.Windows.Forms.Button();
             this.addBookButton = new System.Windows.Forms.Button();
-            this.registerBookButton = new System.Windows.Forms.Button();
+            this.registerProductButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateRegisteredPicker
@@ -79,22 +79,22 @@
             this.addBookButton.UseVisualStyleBackColor = true;
             this.addBookButton.Click += new System.EventHandler(this.addBookButton_Click);
             // 
-            // registerBookButton
+            // registerProductButton
             // 
-            this.registerBookButton.Location = new System.Drawing.Point(289, 210);
-            this.registerBookButton.Name = "registerBookButton";
-            this.registerBookButton.Size = new System.Drawing.Size(165, 29);
-            this.registerBookButton.TabIndex = 5;
-            this.registerBookButton.Text = "Register Book";
-            this.registerBookButton.UseVisualStyleBackColor = true;
-            this.registerBookButton.Click += new System.EventHandler(this.registerBookButton_Click);
+            this.registerProductButton.Location = new System.Drawing.Point(289, 210);
+            this.registerProductButton.Name = "registerProductButton";
+            this.registerProductButton.Size = new System.Drawing.Size(165, 29);
+            this.registerProductButton.TabIndex = 5;
+            this.registerProductButton.Text = "Register Product";
+            this.registerProductButton.UseVisualStyleBackColor = true;
+            this.registerProductButton.Click += new System.EventHandler(this.registerProductButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 278);
-            this.Controls.Add(this.registerBookButton);
+            this.Controls.Add(this.registerProductButton);
             this.Controls.Add(this.addBookButton);
             this.Controls.Add(this.addCustomerButton);
             this.Controls.Add(this.bookComboBox);
@@ -114,7 +114,7 @@
         private System.Windows.Forms.ComboBox bookComboBox;
         private System.Windows.Forms.Button addCustomerButton;
         private System.Windows.Forms.Button addBookButton;
-        private System.Windows.Forms.Button registerBookButton;
+        private System.Windows.Forms.Button registerProductButton;
     }
 }
 
