@@ -9,6 +9,10 @@ namespace BookRegistration
 {
     static class BookDB
     {
+        /// <summary>
+        /// Retrieves all books from the database
+        /// </summary>
+        /// <returns></returns>
         public static List<Book> GetAllBooks() 
         {
             //Establish sql connection object to DB by calling the DBHelper class and it's GetConnection method

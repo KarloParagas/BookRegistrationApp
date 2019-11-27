@@ -28,6 +28,11 @@ namespace BookRegistration
         /// </summary>
         public Book NewBook { get; set; }
 
+        /// <summary>
+        /// Adds a single book to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddBookBtn_Click(object sender, EventArgs e)
         {
             //If user submits empty fields
@@ -60,6 +65,10 @@ namespace BookRegistration
             }
         }
 
+        /// <summary>
+        /// Checks if user submits an empty form, and gives an error if so
+        /// </summary>
+        /// <returns></returns>
         private bool isDataValid()
         {
             if (isbnTxt.Text == "" || titleTxt.Text == "" || priceTxt.Text == "") 

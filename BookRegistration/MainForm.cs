@@ -18,6 +18,11 @@ namespace BookRegistration
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Pops up an add customer dialog box so user can add a customer to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addCustomerButton_Click(object sender, EventArgs e)
         {
             //Create an add customer object
@@ -39,6 +44,11 @@ namespace BookRegistration
             }
         }
 
+        /// <summary>
+        /// Pops up an add book dialog box so the user can add a book to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addBookButton_Click(object sender, EventArgs e)
         {
             //Create an add book object
@@ -66,6 +76,11 @@ namespace BookRegistration
         /// </summary>
         public Registration NewReg { get; set; }
 
+        /// <summary>
+        /// Registers a single selected customer and book 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void registerProductButton_Click(object sender, EventArgs e)
         {
             if (isSelectionValid() == true) 
@@ -108,6 +123,10 @@ namespace BookRegistration
             }
         }
 
+        /// <summary>
+        /// Checks if user selects a valid customer and book
+        /// </summary>
+        /// <returns></returns>
         private bool isSelectionValid()
         {
             //If user doesn't select anything
