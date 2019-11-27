@@ -31,31 +31,46 @@ namespace BookRegistration
 
         private void AddCustomerBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Customer has been saved to the database");
-
-            //Creates a single customer object
-            Customer c = new Customer()
+            //If user submits an empty field
+            if (isDataValid() == true) 
             {
-                FirstName = firstNameTxt.Text,
-                LastName = lastNameTxt.Text,
-                DateOfBirth = dateOfBirthPicker.Value,
-                Title = titleTxt.Text
-            };
+                MessageBox.Show("Customer has been saved to the database");
 
-            //Once a customer object has been created, 
-            //set the new customer into that property (Customer.cs)
-            NewCustomer = c;
+                //Creates a single customer object
+                Customer c = new Customer()
+                {
+                    FirstName = firstNameTxt.Text,
+                    LastName = lastNameTxt.Text,
+                    DateOfBirth = dateOfBirthPicker.Value,
+                    Title = titleTxt.Text
+                };
 
-            try
-            {
-                //Add the customer to the database
-                CustomerDB.Add(c); //This .add is from CustomerDB's add method
-                DialogResult = DialogResult.OK;             
+                //Once a customer object has been created, 
+                //set the new customer into that property (Customer.cs)
+                NewCustomer = c;
+
+                try
+                {
+                    //Add the customer to the database
+                    CustomerDB.Add(c); //This .add is from CustomerDB's add method
+                    DialogResult = DialogResult.OK;             
+                }
+                catch (SqlException) 
+                {
+                    MessageBox.Show("We're having server issues.");
+                }            
             }
-            catch (SqlException) 
+        }
+
+        private bool isDataValid()
+        {
+            if (firstNameTxt.Text == "" || lastNameTxt.Text == "" || titleTxt.Text == "") 
             {
-                MessageBox.Show("We're having server issues.");
+                MessageBox.Show("Please fill out all required fields");
+                return false;
             }
+
+            return true;
         }
     }
 }

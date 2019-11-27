@@ -30,30 +30,44 @@ namespace BookRegistration
 
         private void AddBookBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Saved the book to the database");
-
-            //Creates a single book object
-            Book b = new Book()
+            //If user submits empty fields
+            if (isDataValid() == true) 
             {
-                ISBN = isbnTxt.Text,
-                Title = titleTxt.Text,
-                Price = Convert.ToDecimal(priceTxt.Text)
-            };
+                MessageBox.Show("Saved the book to the database");
 
-            //Once a book object has been created, 
-            //set the new book into that property (Book.cs)
-            NewBook = b;
+                //Creates a single book object
+                Book b = new Book()
+                {
+                    ISBN = isbnTxt.Text,
+                    Title = titleTxt.Text,
+                    Price = Convert.ToDecimal(priceTxt.Text)
+                };
 
-            try
-            {
-                //Add the book to the database
-                BookDB.Add(b); //This .add is from BookDB's add method
-                DialogResult = DialogResult.OK;
+                //Once a book object has been created, 
+                //set the new book into that property (Book.cs)
+                NewBook = b;
+
+                try
+                {
+                    //Add the book to the database
+                    BookDB.Add(b); //This .add is from BookDB's add method
+                    DialogResult = DialogResult.OK;
+                }
+                catch 
+                {
+                    MessageBox.Show("We're having server issues");
+                }           
             }
-            catch 
+        }
+
+        private bool isDataValid()
+        {
+            if (isbnTxt.Text == "" || titleTxt.Text == "" || priceTxt.Text == "") 
             {
-                MessageBox.Show("We're having server issues");
+                MessageBox.Show("Please fill out all required fields");
+                return false;
             }
+            return true;
         }
     }
 }
