@@ -41,7 +41,7 @@
             this.dateRegisteredPicker.Location = new System.Drawing.Point(47, 219);
             this.dateRegisteredPicker.Name = "dateRegisteredPicker";
             this.dateRegisteredPicker.Size = new System.Drawing.Size(200, 20);
-            this.dateRegisteredPicker.TabIndex = 0;
+            this.dateRegisteredPicker.TabIndex = 4;
             // 
             // customerComboBox
             // 
@@ -49,7 +49,7 @@
             this.customerComboBox.Location = new System.Drawing.Point(47, 54);
             this.customerComboBox.Name = "customerComboBox";
             this.customerComboBox.Size = new System.Drawing.Size(200, 21);
-            this.customerComboBox.TabIndex = 1;
+            this.customerComboBox.TabIndex = 0;
             // 
             // bookComboBox
             // 
@@ -64,7 +64,7 @@
             this.addCustomerButton.Location = new System.Drawing.Point(289, 43);
             this.addCustomerButton.Name = "addCustomerButton";
             this.addCustomerButton.Size = new System.Drawing.Size(165, 32);
-            this.addCustomerButton.TabIndex = 3;
+            this.addCustomerButton.TabIndex = 1;
             this.addCustomerButton.Text = "Add Customer";
             this.addCustomerButton.UseVisualStyleBackColor = true;
             this.addCustomerButton.Click += new System.EventHandler(this.addCustomerButton_Click);
@@ -74,7 +74,7 @@
             this.addBookButton.Location = new System.Drawing.Point(289, 128);
             this.addBookButton.Name = "addBookButton";
             this.addBookButton.Size = new System.Drawing.Size(165, 30);
-            this.addBookButton.TabIndex = 4;
+            this.addBookButton.TabIndex = 3;
             this.addBookButton.Text = "Add Book";
             this.addBookButton.UseVisualStyleBackColor = true;
             this.addBookButton.Click += new System.EventHandler(this.addBookButton_Click);

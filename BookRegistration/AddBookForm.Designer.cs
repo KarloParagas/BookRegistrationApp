@@ -52,7 +52,7 @@
             this.label2.Location = new System.Drawing.Point(12, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Title:";
             // 
             // label3
@@ -61,7 +61,7 @@
             this.label3.Location = new System.Drawing.Point(12, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 4;
             this.label3.Text = "Price:";
             // 
             // isbnTxt
@@ -69,14 +69,14 @@
             this.isbnTxt.Location = new System.Drawing.Point(80, 26);
             this.isbnTxt.Name = "isbnTxt";
             this.isbnTxt.Size = new System.Drawing.Size(100, 20);
-            this.isbnTxt.TabIndex = 3;
+            this.isbnTxt.TabIndex = 1;
             // 
             // titleTxt
             // 
             this.titleTxt.Location = new System.Drawing.Point(80, 62);
             this.titleTxt.Name = "titleTxt";
             this.titleTxt.Size = new System.Drawing.Size(100, 20);
-            this.titleTxt.TabIndex = 4;
+            this.titleTxt.TabIndex = 3;
             // 
             // priceTxt
             // 
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 155);
+            this.ClientSize = new System.Drawing.Size(303, 146);
             this.Controls.Add(this.AddBookBtn);
             this.Controls.Add(this.priceTxt);
             this.Controls.Add(this.titleTxt);

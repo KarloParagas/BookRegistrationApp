@@ -54,7 +54,7 @@
             this.label2.Location = new System.Drawing.Point(14, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Last Name:";
             // 
             // firstNameTxt
@@ -62,7 +62,7 @@
             this.firstNameTxt.Location = new System.Drawing.Point(103, 28);
             this.firstNameTxt.Name = "firstNameTxt";
             this.firstNameTxt.Size = new System.Drawing.Size(97, 20);
-            this.firstNameTxt.TabIndex = 2;
+            this.firstNameTxt.TabIndex = 1;
             // 
             // lastNameTxt
             // 
@@ -77,7 +77,7 @@
             this.label3.Location = new System.Drawing.Point(14, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Date Of Birth:";
             // 
             // AddCustomerBtn
@@ -85,7 +85,7 @@
             this.AddCustomerBtn.Location = new System.Drawing.Point(103, 177);
             this.AddCustomerBtn.Name = "AddCustomerBtn";
             this.AddCustomerBtn.Size = new System.Drawing.Size(97, 23);
-            this.AddCustomerBtn.TabIndex = 6;
+            this.AddCustomerBtn.TabIndex = 8;
             this.AddCustomerBtn.Text = "Add Customer";
             this.AddCustomerBtn.UseVisualStyleBackColor = true;
             this.AddCustomerBtn.Click += new System.EventHandler(this.AddCustomerBtn_Click);
@@ -104,7 +104,7 @@
             this.label4.Location = new System.Drawing.Point(14, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 4;
             this.label4.Text = "Title:";
             // 
             // titleTxt
@@ -112,7 +112,7 @@
             this.titleTxt.Location = new System.Drawing.Point(103, 99);
             this.titleTxt.Name = "titleTxt";
             this.titleTxt.Size = new System.Drawing.Size(97, 20);
-            this.titleTxt.TabIndex = 9;
+            this.titleTxt.TabIndex = 5;
             // 
             // AddCustomerForm
             // 
