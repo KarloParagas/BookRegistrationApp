@@ -68,41 +68,55 @@ namespace BookRegistration
 
         private void registerProductButton_Click(object sender, EventArgs e)
         {
-            //Create a RegistrationConfirmationForm object
-            RegisterConfirmationForm confirm = new RegisterConfirmationForm();
-
-            //Gives the user an option to confirm their registration or not
-            DialogResult result = confirm.ShowDialog();
-
-            //If user clicks yes
-            if (result == DialogResult.OK)
+            if (isSelectionValid() == true) 
             {
-                //Get the selected customer
-                Customer c = (Customer)customerComboBox.SelectedItem;
+                //Create a RegistrationConfirmationForm object
+                RegisterConfirmationForm confirm = new RegisterConfirmationForm();
 
-                //Grab the selected book
-                Book b = (Book)bookComboBox.SelectedItem;
+                //Gives the user an option to confirm their registration or not
+                DialogResult result = confirm.ShowDialog();
 
-                //Create a registration object
-                Registration regBook = new Registration()
+                //If user clicks yes
+                if (result == DialogResult.OK)
                 {
-                    //Get the selected customer's CustomerID
-                    CustomerID = c.CustomerID,
+                    //Get the selected customer
+                    Customer c = (Customer)customerComboBox.SelectedItem;
 
-                    //Get the selected book's ISBN
-                    ISBN = b.ISBN,
+                    //Grab the selected book
+                    Book b = (Book)bookComboBox.SelectedItem;
 
-                    //Get the register date
-                    RegDate = dateRegisteredPicker.Value
-                };
+                    //Create a registration object
+                    Registration regBook = new Registration()
+                    {
+                        //Get the selected customer's CustomerID
+                        CustomerID = c.CustomerID,
 
-                //Once the registration object has been created
-                //set the new registration into the property (Registration.cs)
-                NewReg = regBook;
+                        //Get the selected book's ISBN
+                        ISBN = b.ISBN,
 
-                //Add the registration to the database
-                BookRegistrationDB.RegisterBook(regBook);
+                        //Get the register date
+                        RegDate = dateRegisteredPicker.Value
+                    };
+
+                    //Once the registration object has been created
+                    //set the new registration into the property (Registration.cs)
+                    NewReg = regBook;
+
+                    //Add the registration to the database
+                    BookRegistrationDB.RegisterBook(regBook);
+                }            
             }
+        }
+
+        private bool isSelectionValid()
+        {
+            //If user doesn't select anything
+            if (customerComboBox.Text == "" || bookComboBox.Text == "" ) 
+            {
+                MessageBox.Show("Please make sure you select a customer and/or book before registering");
+                return false;
+            }
+            return true;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
