@@ -18,11 +18,6 @@ namespace BookRegistration
             InitializeComponent();
         }
 
-        //Properties
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
-
         /// <summary>
         /// Gets the newly added customer.
         /// Create a public NewCustomer so it can be accessed in other forms.

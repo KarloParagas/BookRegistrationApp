@@ -17,11 +17,6 @@ namespace BookRegistration
             InitializeComponent();
         }
 
-        //Properties
-        public string ISBN { get; set; }
-        public string Title { get; set; }
-        public decimal Price { get; set; }
-
         /// <summary>
         /// Gets the newly added book.
         /// Create a public NewBook so it can be accessed in other forms.
