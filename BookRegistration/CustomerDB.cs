@@ -90,8 +90,87 @@ namespace BookRegistration
             }
         }
 
-        //TODO: Add update method
+        /// <summary>
+        /// Updates all properties for a customer based on their customer ID
+        /// </summary>
+        /// <exception cref="ArgumentException">Thrown when the ID doesn't exist</exception>
+        /// <param name="c">Customer with updated info</param>
+        public static void Update(Customer c) 
+        {
+            SqlConnection connection = DBHelper.GetConnection();
 
-        //TODO: Add delete method
+            SqlCommand updateCommand = new SqlCommand();
+            updateCommand.Connection = connection;
+            updateCommand.CommandText = "UPDATE Customer " +
+                                        "SET DateOfBirth = @DateOfBirth, " +
+                                            "FirstName = @FirstName, " +
+                                            "LastName = @LastName, " +
+                                            "Title = @Title " +
+                                        "WHERE CustomerID = @CustomerID";
+
+            updateCommand.Parameters.AddWithValue("@DateOfBirth", c.CustomerID);
+            updateCommand.Parameters.AddWithValue("@FirstName", c.FirstName);
+            updateCommand.Parameters.AddWithValue("@LastName", c.LastName);
+            updateCommand.Parameters.AddWithValue("@Title", c.Title);
+            updateCommand.Parameters.AddWithValue("@CustomerID", c.CustomerID);
+
+            try
+            {
+                connection.Open();
+
+                int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                if (rowsAffected == 0) 
+                {
+                    throw new ArgumentException("A customer with that ID is not found");
+                }
+            }
+            finally 
+            {
+                connection.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Deletes a single customer from the database
+        /// </summary>
+        /// <exception cref="SqlException">There was a problem with the database</exception>
+        /// <exception cref="Exception">Thrown when no student is deleted</exception>
+        /// <param name="id">The CustomerID of the customer to be deleted</param>
+        public static void Delete(int id) 
+        {
+            SqlConnection connection = DBHelper.GetConnection();
+
+            string query = "DELETE FROM Customer " +
+                           "WHERE CustomerID = @CustomerID";
+
+            SqlCommand deleteCommand = new SqlCommand(query, connection);
+
+            deleteCommand.Parameters.AddWithValue("@CustomerID", id);
+
+            try
+            {
+                connection.Open();
+
+                int rows = deleteCommand.ExecuteNonQuery();
+
+                if (rows == 0) 
+                {
+                    throw new Exception("No customer was deleted");
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.GetType().ToString());
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+                throw ex;
+            }
+            finally 
+            {
+                //Ensure the connection is closed and the object is deleted
+                connection.Dispose();
+            }
+        }
     }
 }
