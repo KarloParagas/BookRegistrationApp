@@ -173,5 +173,15 @@ namespace BookRegistration
                 bookComboBox.Items.Add(b);
             }
         }
+
+        private void editCustomerBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void editBookBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

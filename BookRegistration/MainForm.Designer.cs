@@ -34,6 +34,8 @@
             this.addCustomerButton = new System.Windows.Forms.Button();
             this.addBookButton = new System.Windows.Forms.Button();
             this.registerProductButton = new System.Windows.Forms.Button();
+            this.editCustomerBtn = new System.Windows.Forms.Button();
+            this.editBookBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateRegisteredPicker
@@ -89,11 +91,33 @@
             this.registerProductButton.UseVisualStyleBackColor = true;
             this.registerProductButton.Click += new System.EventHandler(this.registerProductButton_Click);
             // 
+            // editCustomerBtn
+            // 
+            this.editCustomerBtn.Location = new System.Drawing.Point(311, 81);
+            this.editCustomerBtn.Name = "editCustomerBtn";
+            this.editCustomerBtn.Size = new System.Drawing.Size(121, 23);
+            this.editCustomerBtn.TabIndex = 6;
+            this.editCustomerBtn.Text = "Edit Customer";
+            this.editCustomerBtn.UseVisualStyleBackColor = true;
+            this.editCustomerBtn.Click += new System.EventHandler(this.editCustomerBtn_Click);
+            // 
+            // editBookBtn
+            // 
+            this.editBookBtn.Location = new System.Drawing.Point(311, 164);
+            this.editBookBtn.Name = "editBookBtn";
+            this.editBookBtn.Size = new System.Drawing.Size(121, 23);
+            this.editBookBtn.TabIndex = 7;
+            this.editBookBtn.Text = "Edit Book";
+            this.editBookBtn.UseVisualStyleBackColor = true;
+            this.editBookBtn.Click += new System.EventHandler(this.editBookBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 278);
+            this.ClientSize = new System.Drawing.Size(499, 273);
+            this.Controls.Add(this.editBookBtn);
+            this.Controls.Add(this.editCustomerBtn);
             this.Controls.Add(this.registerProductButton);
             this.Controls.Add(this.addBookButton);
             this.Controls.Add(this.addCustomerButton);
@@ -115,6 +139,8 @@
         private System.Windows.Forms.Button addCustomerButton;
         private System.Windows.Forms.Button addBookButton;
         private System.Windows.Forms.Button registerProductButton;
+        private System.Windows.Forms.Button editCustomerBtn;
+        private System.Windows.Forms.Button editBookBtn;
     }
 }
 
