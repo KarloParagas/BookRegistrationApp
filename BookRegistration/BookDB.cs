@@ -86,5 +86,9 @@ namespace BookRegistration
                 connection.Dispose();
             }
         }
+
+        //TODO: Add update method
+
+        //TODO: Add delete method
     }
 }
