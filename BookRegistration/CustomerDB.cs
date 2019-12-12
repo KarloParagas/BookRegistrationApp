@@ -108,7 +108,7 @@ namespace BookRegistration
                                             "Title = @Title " +
                                         "WHERE CustomerID = @CustomerID";
 
-            updateCommand.Parameters.AddWithValue("@DateOfBirth", c.CustomerID);
+            updateCommand.Parameters.AddWithValue("@DateOfBirth", c.DateOfBirth);
             updateCommand.Parameters.AddWithValue("@FirstName", c.FirstName);
             updateCommand.Parameters.AddWithValue("@LastName", c.LastName);
             updateCommand.Parameters.AddWithValue("@Title", c.Title);
