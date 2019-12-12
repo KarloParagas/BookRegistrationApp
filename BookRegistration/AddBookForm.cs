@@ -30,7 +30,7 @@ namespace BookRegistration
         /// <param name="e"></param>
         private void AddBookBtn_Click(object sender, EventArgs e)
         {
-            //If user submits empty fields
+            //If user enters valid data
             if (isDataValid() == true) 
             {
                 MessageBox.Show("Saved the book to the database");
@@ -60,18 +60,50 @@ namespace BookRegistration
             }
         }
 
-        /// <summary>
-        /// Checks if user submits an empty form, and gives an error if so
-        /// </summary>
-        /// <returns></returns>
         private bool isDataValid()
         {
-            if (isbnTxt.Text == "" || titleTxt.Text == "" || priceTxt.Text == "") 
+            if (isPresent() && isISBNValid() && isPriceValid() == true) 
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool isPresent()
+        {
+            if (isbnTxt.Text == "" || titleTxt.Text == "" || priceTxt.Text == "")
             {
                 MessageBox.Show("Please fill out all required fields");
                 return false;
             }
             return true;
+        }
+
+        private bool isISBNValid()
+        {
+            if (isbnTxt.Text.Length != 13) 
+            {
+                MessageBox.Show("ISBN must consist of 13 characters/digits");
+                return false;
+            }
+            return true;
+        }
+
+        private bool isPriceValid()
+        {
+            string userInput = priceTxt.Text;
+
+            decimal value;
+
+            if (decimal.TryParse(userInput, out value))
+            {
+                return true;
+            }
+            else 
+            {
+                MessageBox.Show("The price must be a valid integer/decimal input");
+                return false;
+            }
         }
     }
 }
