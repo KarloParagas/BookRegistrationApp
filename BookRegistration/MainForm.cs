@@ -142,6 +142,9 @@ namespace BookRegistration
         {
             PopulateCustomerList();
             PopulateBookList();
+
+            editCustomerBtn.Enabled = false;
+            editBookBtn.Enabled = false;
         }
 
         private void PopulateCustomerList()
@@ -159,6 +162,26 @@ namespace BookRegistration
             }
         }
 
+        /// <summary>
+        /// Enables the edit customer button, if user selects a customer from the combo box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void customerComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            editCustomerBtn.Enabled = true;
+        }
+
+        /// <summary>
+        /// Enables the edit book button, if user selects a book from the combo box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bookComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            editBookBtn.Enabled = true;
+        }
+
         private void PopulateBookList()
         {
             //Populate the list of books from the database
@@ -174,12 +197,36 @@ namespace BookRegistration
             }
         }
 
-        private void editCustomerBtn_Click(object sender, EventArgs e)
+        private void EditCustomerBtn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(customerComboBox.Text)) 
+            {
+                MessageBox.Show("Please select a customer");
+                return;
+            }
+
+            Customer customer = (Customer)customerComboBox.SelectedItem;
+
+            EditCustomerForm editForm = new EditCustomerForm(customer);
+            DialogResult result = editForm.ShowDialog();
+
+            //If customer was successfully updated, pop up a message box the edit was successful
+            //and refresh the customer combo box
+            if (result == DialogResult.OK)
+            {
+                customerComboBox.Text = "";
+
+                MessageBox.Show("Customer was successfully updated");
+
+                PopulateCustomerList();
+            }
+            else 
+            {
+                MessageBox.Show("Nothing was edited");
+            }
         }
 
-        private void editBookBtn_Click(object sender, EventArgs e)
+        private void EditBookBtn_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }

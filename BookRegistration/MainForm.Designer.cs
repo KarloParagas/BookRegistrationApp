@@ -52,6 +52,7 @@
             this.customerComboBox.Name = "customerComboBox";
             this.customerComboBox.Size = new System.Drawing.Size(200, 21);
             this.customerComboBox.TabIndex = 0;
+            this.customerComboBox.SelectedValueChanged += new System.EventHandler(this.customerComboBox_SelectedValueChanged);
             // 
             // bookComboBox
             // 
@@ -60,6 +61,7 @@
             this.bookComboBox.Name = "bookComboBox";
             this.bookComboBox.Size = new System.Drawing.Size(200, 21);
             this.bookComboBox.TabIndex = 2;
+            this.bookComboBox.SelectedIndexChanged += new System.EventHandler(this.bookComboBox_SelectedIndexChanged);
             // 
             // addCustomerButton
             // 
@@ -99,7 +101,7 @@
             this.editCustomerBtn.TabIndex = 6;
             this.editCustomerBtn.Text = "Edit Customer";
             this.editCustomerBtn.UseVisualStyleBackColor = true;
-            this.editCustomerBtn.Click += new System.EventHandler(this.editCustomerBtn_Click);
+            this.editCustomerBtn.Click += new System.EventHandler(this.EditCustomerBtn_Click);
             // 
             // editBookBtn
             // 
@@ -109,7 +111,7 @@
             this.editBookBtn.TabIndex = 7;
             this.editBookBtn.Text = "Edit Book";
             this.editBookBtn.UseVisualStyleBackColor = true;
-            this.editBookBtn.Click += new System.EventHandler(this.editBookBtn_Click);
+            this.editBookBtn.Click += new System.EventHandler(this.EditBookBtn_Click);
             // 
             // MainForm
             // 

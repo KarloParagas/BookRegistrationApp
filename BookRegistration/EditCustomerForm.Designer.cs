@@ -31,7 +31,7 @@
             this.titleTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateOfBirthPicker = new System.Windows.Forms.DateTimePicker();
-            this.AddCustomerBtn = new System.Windows.Forms.Button();
+            this.EditCustomerBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lastNameTxt = new System.Windows.Forms.TextBox();
             this.firstNameTxt = new System.Windows.Forms.TextBox();
@@ -63,14 +63,15 @@
             this.dateOfBirthPicker.Size = new System.Drawing.Size(97, 20);
             this.dateOfBirthPicker.TabIndex = 16;
             // 
-            // AddCustomerBtn
+            // EditCustomerBtn
             // 
-            this.AddCustomerBtn.Location = new System.Drawing.Point(102, 175);
-            this.AddCustomerBtn.Name = "AddCustomerBtn";
-            this.AddCustomerBtn.Size = new System.Drawing.Size(97, 23);
-            this.AddCustomerBtn.TabIndex = 17;
-            this.AddCustomerBtn.Text = "Add Customer";
-            this.AddCustomerBtn.UseVisualStyleBackColor = true;
+            this.EditCustomerBtn.Location = new System.Drawing.Point(102, 175);
+            this.EditCustomerBtn.Name = "EditCustomerBtn";
+            this.EditCustomerBtn.Size = new System.Drawing.Size(97, 23);
+            this.EditCustomerBtn.TabIndex = 17;
+            this.EditCustomerBtn.Text = "Edit Customer";
+            this.EditCustomerBtn.UseVisualStyleBackColor = true;
+            this.EditCustomerBtn.Click += new System.EventHandler(this.EditCustomerBtn_Click);
             // 
             // label3
             // 
@@ -121,7 +122,7 @@
             this.Controls.Add(this.titleTxt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateOfBirthPicker);
-            this.Controls.Add(this.AddCustomerBtn);
+            this.Controls.Add(this.EditCustomerBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lastNameTxt);
             this.Controls.Add(this.firstNameTxt);
@@ -129,6 +130,7 @@
             this.Controls.Add(this.label1);
             this.Name = "EditCustomerForm";
             this.Text = "Edit Customer";
+            this.Load += new System.EventHandler(this.EditCustomerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,7 +141,7 @@
         private System.Windows.Forms.TextBox titleTxt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateOfBirthPicker;
-        private System.Windows.Forms.Button AddCustomerBtn;
+        private System.Windows.Forms.Button EditCustomerBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox lastNameTxt;
         private System.Windows.Forms.TextBox firstNameTxt;
