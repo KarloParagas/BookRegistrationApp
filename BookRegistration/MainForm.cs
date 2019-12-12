@@ -225,8 +225,17 @@ namespace BookRegistration
                 MessageBox.Show("Nothing was edited");
             }
         }
+        private void DeleteCustomerBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
         private void EditBookBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DeleteBookBtn_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
         }
