@@ -31,7 +31,7 @@ namespace BookRegistration
         /// <param name="e"></param>
         private void AddCustomerBtn_Click(object sender, EventArgs e)
         {
-            //If user submits an empty field
+            //If user submits a valid data
             if (isDataValid() == true) 
             {
                 MessageBox.Show("Customer has been saved to the database");
@@ -62,18 +62,49 @@ namespace BookRegistration
             }
         }
 
-        /// <summary>
-        /// Checks if user submits an empty form, and gives an error if so
-        /// </summary>
-        /// <returns></returns>
         private bool isDataValid()
+        {
+            if (isPresent() && isTitleValid() && isDOBValid() == true) 
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool isPresent()
         {
             if (firstNameTxt.Text == "" || lastNameTxt.Text == "" || titleTxt.Text == "") 
             {
                 MessageBox.Show("Please fill out all required fields");
                 return false;
             }
+            return true;
+        }
 
+        private bool isTitleValid()
+        {
+            string userInput = titleTxt.Text;
+
+            if (userInput == "Mr" || userInput == "Ms" || userInput == "Mrs" ||
+                userInput == "Dr" || userInput == "Sr" || userInput == "Jr")
+            {
+                return true;
+            }
+            else 
+            {
+                MessageBox.Show("Please provide a valid title (i.e. Mr, Ms, Mrs, Dr, Sr, Jr) ");
+                return false;
+            }
+        }
+
+        private bool isDOBValid()
+        {
+            if (dateOfBirthPicker.Value > DateTime.Today) 
+            {
+                MessageBox.Show("No time travelers allowed at this time");
+                return false;
+            }
             return true;
         }
     }
