@@ -87,8 +87,87 @@ namespace BookRegistration
             }
         }
 
-        //TODO: Add update method
+        /// <summary>
+        /// Updates all properties for the book based on the ISBN
+        /// </summary>
+        /// <exception cref="ArgumentException">Thrown when a book with that ISBN doesn't exist</exception>
+        /// <param name="b">The book with updated info</param>
+        public static void Update(Book b) 
+        {
+            SqlConnection connection = DBHelper.GetConnection();
 
-        //TODO: Add delete method
+            SqlCommand updateCommand = new SqlCommand();
+
+            updateCommand.Connection = connection;
+
+            updateCommand.CommandText = "UPDATE Book " +
+                                        "SET ISBN = @ISBN, " +
+                                            "Price = @Price, " +
+                                            "Title = @Title " +
+                                        "WHERE ISBN = @ISBN";
+
+            updateCommand.Parameters.AddWithValue("@ISBN", b.ISBN);
+            updateCommand.Parameters.AddWithValue("@Price", b.Price);
+            updateCommand.Parameters.AddWithValue("@Title", b.Title);
+
+            try
+            {
+                connection.Open();
+
+                int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                if (rowsAffected == 0) 
+                {
+                    throw new ArgumentException("A book with that ISBN is not found");
+                }
+            }
+            finally 
+            {
+                connection.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Deleted a single book from the database
+        /// </summary>
+        /// <exception cref="SqlException">Thrown when there's a problem with the database</exception>
+        /// <exception cref="Exception">Thrown when no book is deleted</exception>
+        /// <param name="ISBN">The ISBN of the book to be deleted</param>
+        public static void Delete(string ISBN) 
+        {
+            SqlConnection connection = DBHelper.GetConnection();
+
+            string query = "DELETE FROM Book " +
+                           "WHERE ISBN = @ISBN";
+
+            SqlCommand deleteCommand = new SqlCommand(query, connection);
+
+            deleteCommand.Parameters.AddWithValue("@ISBN", ISBN);
+
+            try
+            {
+                connection.Open();
+
+                int rows = deleteCommand.ExecuteNonQuery();
+
+                if (rows == 0) 
+                {
+                    throw new Exception("No book was deleted");
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.GetType().ToString());
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+
+                throw ex;
+            }
+            finally 
+            {
+                //Ensure the connection is closed and the object deleted
+                connection.Dispose();
+            }
+        }
     }
 }
