@@ -17,6 +17,16 @@ namespace BookRegistration
         {
             InitializeComponent();
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            PopulateCustomerList();
+            PopulateBookList();
+
+            editCustomerBtn.Enabled = false;
+            editBookBtn.Enabled = false;
+            deleteCustomerBtn.Enabled = false;
+            deleteBookBtn.Enabled = false;
+        }
 
         /// <summary>
         /// Pops up an add customer dialog box so user can add a customer to the database
@@ -138,15 +148,6 @@ namespace BookRegistration
             return true;
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            PopulateCustomerList();
-            PopulateBookList();
-
-            editCustomerBtn.Enabled = false;
-            editBookBtn.Enabled = false;
-        }
-
         private void PopulateCustomerList()
         {
             //Populate the list of customers from the database
@@ -162,26 +163,6 @@ namespace BookRegistration
             }
         }
 
-        /// <summary>
-        /// Enables the edit customer button, if user selects a customer from the combo box
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void customerComboBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            editCustomerBtn.Enabled = true;
-        }
-
-        /// <summary>
-        /// Enables the edit book button, if user selects a book from the combo box
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void bookComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            editBookBtn.Enabled = true;
-        }
-
         private void PopulateBookList()
         {
             //Populate the list of books from the database
@@ -195,6 +176,28 @@ namespace BookRegistration
             {
                 bookComboBox.Items.Add(b);
             }
+        }
+
+        /// <summary>
+        /// Enables the edit customer button, if user selects a customer from the combo box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void customerComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            editCustomerBtn.Enabled = true;
+            deleteCustomerBtn.Enabled = true;
+        }
+
+        /// <summary>
+        /// Enables the edit book button, if user selects a book from the combo box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bookComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            editBookBtn.Enabled = true;
+            deleteBookBtn.Enabled = true;
         }
 
         private void EditCustomerBtn_Click(object sender, EventArgs e)
@@ -225,9 +228,40 @@ namespace BookRegistration
                 MessageBox.Show("Nothing was edited");
             }
         }
+
         private void DeleteCustomerBtn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //Get the selected customer
+            Customer selectedCustomer = (Customer)customerComboBox.SelectedItem;
+
+            string message = $"Are you sure you want to delete {selectedCustomer.FirstName} {selectedCustomer.LastName}?";
+
+            DialogResult result = MessageBox.Show(text: message, 
+                                                  caption: "Delete?",
+                                                  buttons: MessageBoxButtons.YesNo,
+                                                  icon: MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes) 
+            {
+                try
+                {
+                    //Remove in database
+                    CustomerDB.Delete(selectedCustomer.CustomerID);
+
+                    //Remove from the list
+                    customerComboBox.Items.Remove(selectedCustomer);
+
+                    MessageBox.Show("Customer deleted");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("We are having server issues. Try again later");
+                }
+                catch (Exception) 
+                {
+                    MessageBox.Show("No customers deleted");
+                }
+            }
         }
 
         private void EditBookBtn_Click(object sender, EventArgs e)
