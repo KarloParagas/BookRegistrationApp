@@ -293,7 +293,37 @@ namespace BookRegistration
 
         private void DeleteBookBtn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //Get the selected book
+            Book selectedBook = (Book)bookComboBox.SelectedItem;
+
+            string message = $"Are you sure you want to delete {selectedBook.Title} {selectedBook.ISBN}?";
+
+            DialogResult result = MessageBox.Show(text: message,
+                                                  caption: "Delete?",
+                                                  buttons: MessageBoxButtons.YesNo,
+                                                  icon: MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    //Remove in database
+                    BookDB.Delete(selectedBook.ISBN);
+
+                    //Remove from the list
+                    customerComboBox.Items.Remove(selectedBook);
+
+                    MessageBox.Show("Book deleted");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("We are having server issues. Try again later");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("No books deleted");
+                }
+            }
         }
     }
 }
