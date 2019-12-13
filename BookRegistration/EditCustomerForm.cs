@@ -31,6 +31,7 @@ namespace BookRegistration
 
         private void EditCustomerBtn_Click(object sender, EventArgs e)
         {
+            //Grab the newly edited customer's information
             Customer customer = new Customer()
             {
                 FirstName = firstNameTxt.Text,
