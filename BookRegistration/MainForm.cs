@@ -266,7 +266,29 @@ namespace BookRegistration
 
         private void EditBookBtn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(bookComboBox.Text)) 
+            {
+                MessageBox.Show("Please select a book");
+                return;
+            }
+
+            Book book = (Book)bookComboBox.SelectedItem;
+
+            EditBookForm editForm = new EditBookForm(book);
+            DialogResult result = editForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                bookComboBox.Text = "";
+
+                MessageBox.Show("Book was successfully updated");
+
+                PopulateBookList();
+            }
+            else 
+            {
+                MessageBox.Show("Nothing was edited");
+            }
         }
 
         private void DeleteBookBtn_Click(object sender, EventArgs e)

@@ -101,8 +101,7 @@ namespace BookRegistration
             updateCommand.Connection = connection;
 
             updateCommand.CommandText = "UPDATE Book " +
-                                        "SET ISBN = @ISBN, " +
-                                            "Price = @Price, " +
+                                        "SET Price = @Price, " +
                                             "Title = @Title " +
                                         "WHERE ISBN = @ISBN";
 
