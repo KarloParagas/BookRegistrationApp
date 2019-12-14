@@ -262,6 +262,8 @@ namespace BookRegistration
                     MessageBox.Show("No customers deleted");
                 }
             }
+
+            //TODO: If the customer to be deleted currently has a registration in the database, delete their registration as well
         }
 
         private void EditBookBtn_Click(object sender, EventArgs e)
@@ -324,6 +326,8 @@ namespace BookRegistration
                     MessageBox.Show("No books deleted");
                 }
             }
+
+            //TODO: If the book to be deleted currently has a registration in the database, delete its registration as well
         }
     }
 }
