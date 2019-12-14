@@ -49,7 +49,7 @@ namespace BookRegistration
 
             Registration registration = (Registration)registrationListBox.SelectedItem;
 
-            string message = $"Are you sure you want to delete CustomerID #{registration.CustomerID}'s registration?";
+            string message = $"Are you sure you want to delete Customer #{registration.CustomerID}'s registration?";
 
             DialogResult result = MessageBox.Show(text: message,
                                                    caption: "Delete?",

@@ -332,6 +332,11 @@ namespace BookRegistration
             //TODO: If the book to be deleted currently has a registration in the database, delete its registration as well
         }
 
+        /// <summary>
+        /// Shows all the registered products in a different form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowAllBtn_Click(object sender, EventArgs e)
         {
             ShowAllRegisteredForm showAll = new ShowAllRegisteredForm();
