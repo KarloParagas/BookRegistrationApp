@@ -38,7 +38,7 @@
             this.editBookBtn = new System.Windows.Forms.Button();
             this.deleteCustomerBtn = new System.Windows.Forms.Button();
             this.deleteBookBtn = new System.Windows.Forms.Button();
-            this.deleteRegistrationBtn = new System.Windows.Forms.Button();
+            this.showAllBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateRegisteredPicker
@@ -136,22 +136,22 @@
             this.deleteBookBtn.UseVisualStyleBackColor = true;
             this.deleteBookBtn.Click += new System.EventHandler(this.DeleteBookBtn_Click);
             // 
-            // deleteRegistrationBtn
+            // showAllBtn
             // 
-            this.deleteRegistrationBtn.Location = new System.Drawing.Point(318, 245);
-            this.deleteRegistrationBtn.Name = "deleteRegistrationBtn";
-            this.deleteRegistrationBtn.Size = new System.Drawing.Size(117, 23);
-            this.deleteRegistrationBtn.TabIndex = 10;
-            this.deleteRegistrationBtn.Text = "Delete Registration";
-            this.deleteRegistrationBtn.UseVisualStyleBackColor = true;
-            this.deleteRegistrationBtn.Click += new System.EventHandler(this.DeleteRegistrationBtn_Click);
+            this.showAllBtn.Location = new System.Drawing.Point(318, 245);
+            this.showAllBtn.Name = "showAllBtn";
+            this.showAllBtn.Size = new System.Drawing.Size(117, 23);
+            this.showAllBtn.TabIndex = 10;
+            this.showAllBtn.Text = "Show All Registered";
+            this.showAllBtn.UseVisualStyleBackColor = true;
+            this.showAllBtn.Click += new System.EventHandler(this.ShowAllBtn_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 273);
-            this.Controls.Add(this.deleteRegistrationBtn);
+            this.Controls.Add(this.showAllBtn);
             this.Controls.Add(this.deleteBookBtn);
             this.Controls.Add(this.deleteCustomerBtn);
             this.Controls.Add(this.editBookBtn);
@@ -181,7 +181,7 @@
         private System.Windows.Forms.Button editBookBtn;
         private System.Windows.Forms.Button deleteCustomerBtn;
         private System.Windows.Forms.Button deleteBookBtn;
-        private System.Windows.Forms.Button deleteRegistrationBtn;
+        private System.Windows.Forms.Button showAllBtn;
     }
 }
 

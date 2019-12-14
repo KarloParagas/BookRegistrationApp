@@ -330,9 +330,21 @@ namespace BookRegistration
             //TODO: If the book to be deleted currently has a registration in the database, delete its registration as well
         }
 
-        private void DeleteRegistrationBtn_Click(object sender, EventArgs e)
+        private void ShowAllBtn_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            ShowAllRegisteredForm showAll = new ShowAllRegisteredForm();
+
+            DialogResult result = showAll.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                PopulateCustomerList();
+                PopulateBookList();
+            }
+            else 
+            {
+                MessageBox.Show("No registration was updated or deleted");
+            }
         }
     }
 }
