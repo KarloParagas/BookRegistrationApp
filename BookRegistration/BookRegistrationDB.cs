@@ -102,7 +102,7 @@ namespace BookRegistration
         /// Deletes a single registration
         /// </summary>
         /// <param name="r"></param>
-        public static void Delete(Registration r) 
+        public static void Delete(int id) 
         {
             SqlConnection connection = DBHelper.GetConnection();
 
@@ -111,7 +111,7 @@ namespace BookRegistration
 
             SqlCommand deleteCommand = new SqlCommand(query, connection);
 
-            deleteCommand.Parameters.AddWithValue("@CustomerID", r);
+            deleteCommand.Parameters.AddWithValue("@CustomerID", id);
 
             try
             {

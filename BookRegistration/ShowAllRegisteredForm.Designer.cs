@@ -49,6 +49,7 @@
             this.deleteRegistrationBtn.TabIndex = 1;
             this.deleteRegistrationBtn.Text = "Delete Registration";
             this.deleteRegistrationBtn.UseVisualStyleBackColor = true;
+            this.deleteRegistrationBtn.Click += new System.EventHandler(this.DeleteRegistrationBtn_Click);
             // 
             // backBtn
             // 

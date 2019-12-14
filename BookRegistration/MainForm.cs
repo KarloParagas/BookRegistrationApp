@@ -316,6 +316,8 @@ namespace BookRegistration
                     customerComboBox.Items.Remove(selectedBook);
 
                     MessageBox.Show("Book deleted");
+
+                    bookComboBox.Text = "";
                 }
                 catch (SqlException)
                 {
