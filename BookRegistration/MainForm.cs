@@ -329,5 +329,10 @@ namespace BookRegistration
 
             //TODO: If the book to be deleted currently has a registration in the database, delete its registration as well
         }
+
+        private void DeleteRegistrationBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

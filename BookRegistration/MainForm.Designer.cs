@@ -38,6 +38,7 @@
             this.editBookBtn = new System.Windows.Forms.Button();
             this.deleteCustomerBtn = new System.Windows.Forms.Button();
             this.deleteBookBtn = new System.Windows.Forms.Button();
+            this.deleteRegistrationBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateRegisteredPicker
@@ -115,31 +116,42 @@
             this.editBookBtn.UseVisualStyleBackColor = true;
             this.editBookBtn.Click += new System.EventHandler(this.EditBookBtn_Click);
             // 
-            // DeleteCustomerBtn
+            // deleteCustomerBtn
             // 
             this.deleteCustomerBtn.Location = new System.Drawing.Point(374, 81);
-            this.deleteCustomerBtn.Name = "DeleteCustomerBtn";
+            this.deleteCustomerBtn.Name = "deleteCustomerBtn";
             this.deleteCustomerBtn.Size = new System.Drawing.Size(95, 23);
             this.deleteCustomerBtn.TabIndex = 8;
             this.deleteCustomerBtn.Text = "Delete Customer";
             this.deleteCustomerBtn.UseVisualStyleBackColor = true;
             this.deleteCustomerBtn.Click += new System.EventHandler(this.DeleteCustomerBtn_Click);
             // 
-            // DeleteBookBtn
+            // deleteBookBtn
             // 
             this.deleteBookBtn.Location = new System.Drawing.Point(374, 164);
-            this.deleteBookBtn.Name = "DeleteBookBtn";
+            this.deleteBookBtn.Name = "deleteBookBtn";
             this.deleteBookBtn.Size = new System.Drawing.Size(95, 23);
             this.deleteBookBtn.TabIndex = 9;
             this.deleteBookBtn.Text = "Delete Book";
             this.deleteBookBtn.UseVisualStyleBackColor = true;
             this.deleteBookBtn.Click += new System.EventHandler(this.DeleteBookBtn_Click);
             // 
+            // deleteRegistrationBtn
+            // 
+            this.deleteRegistrationBtn.Location = new System.Drawing.Point(318, 245);
+            this.deleteRegistrationBtn.Name = "deleteRegistrationBtn";
+            this.deleteRegistrationBtn.Size = new System.Drawing.Size(117, 23);
+            this.deleteRegistrationBtn.TabIndex = 10;
+            this.deleteRegistrationBtn.Text = "Delete Registration";
+            this.deleteRegistrationBtn.UseVisualStyleBackColor = true;
+            this.deleteRegistrationBtn.Click += new System.EventHandler(this.DeleteRegistrationBtn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 273);
+            this.Controls.Add(this.deleteRegistrationBtn);
             this.Controls.Add(this.deleteBookBtn);
             this.Controls.Add(this.deleteCustomerBtn);
             this.Controls.Add(this.editBookBtn);
@@ -169,6 +181,7 @@
         private System.Windows.Forms.Button editBookBtn;
         private System.Windows.Forms.Button deleteCustomerBtn;
         private System.Windows.Forms.Button deleteBookBtn;
+        private System.Windows.Forms.Button deleteRegistrationBtn;
     }
 }
 
