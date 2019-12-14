@@ -129,6 +129,9 @@ namespace BookRegistration
 
                     //Add the registration to the database
                     BookRegistrationDB.RegisterBook(regBook);
+
+                    bookComboBox.Text = "";
+                    customerComboBox.Text = "";
                 }            
             }
         }
@@ -252,6 +255,8 @@ namespace BookRegistration
                     customerComboBox.Items.Remove(selectedCustomer);
 
                     MessageBox.Show("Customer deleted");
+
+                    PopulateCustomerList();
                 }
                 catch (SqlException)
                 {
@@ -317,6 +322,8 @@ namespace BookRegistration
 
                     MessageBox.Show("Book deleted");
 
+                    PopulateBookList();
+
                     bookComboBox.Text = "";
                 }
                 catch (SqlException)
@@ -339,6 +346,9 @@ namespace BookRegistration
         /// <param name="e"></param>
         private void ShowAllBtn_Click(object sender, EventArgs e)
         {
+            bookComboBox.Text = "";
+            customerComboBox.Text = "";
+
             ShowAllRegisteredForm showAll = new ShowAllRegisteredForm();
 
             DialogResult result = showAll.ShowDialog();
@@ -347,10 +357,6 @@ namespace BookRegistration
             {
                 PopulateCustomerList();
                 PopulateBookList();
-            }
-            else 
-            {
-                MessageBox.Show("No registration was updated or deleted");
             }
         }
     }
