@@ -169,7 +169,7 @@ namespace BookRegistration
             List<Book> allBooks = BookDB.GetAllBooks();
 
             //Start with an empty list, so it doesn't re-add previous books causing duplicates
-            bookComboBox.Items.Clear();
+            bookComboBox.Items.Clear();      
 
             //Adds all of the books from the database in the bookComboBox
             foreach (Book b in allBooks)
@@ -255,7 +255,7 @@ namespace BookRegistration
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("We are having server issues. Try again later");
+                    MessageBox.Show("Delete unsuccessful. The customer you are trying to delete is currently registered.");
                 }
                 catch (Exception) 
                 {
@@ -317,7 +317,7 @@ namespace BookRegistration
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show("We are having server issues. Try again later");
+                    MessageBox.Show("Delete unsuccessful. The book you are trying to delete is currently registered to a customer.");
                 }
                 catch (Exception)
                 {
