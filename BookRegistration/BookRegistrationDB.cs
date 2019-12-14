@@ -9,6 +9,36 @@ namespace BookRegistration
 {
     static class BookRegistrationDB
     {
+        public static List<Registration> GetAllRegistration() 
+        {
+            SqlConnection connection = DBHelper.GetConnection();
+
+            SqlCommand selectCommand = new SqlCommand();
+            selectCommand.Connection = connection;
+            selectCommand.CommandText = "SELECT CustomerID, ISBN, RegDate " +
+                                        "FROM Registration";
+
+            connection.Open();
+
+            SqlDataReader reader = selectCommand.ExecuteReader();
+
+            var registrations = new List<Registration>();
+            while (reader.Read()) 
+            {
+                Registration tempRegistration = new Registration();
+
+                tempRegistration.CustomerID = (int)reader["CustomerID"];
+                tempRegistration.ISBN = (string)reader["ISBN"];
+                tempRegistration.RegDate = (DateTime)reader["RegDate"];
+
+                registrations.Add(tempRegistration);
+            }
+
+            connection.Close();
+
+            return registrations;
+        }
+
         /// <summary>
         /// Registers a book and indicates if the operation was or was not successful
         /// </summary>
