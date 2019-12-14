@@ -68,8 +68,44 @@ namespace BookRegistration
             }
         }
 
-        //TODO: Add update method
+        /// <summary>
+        /// Deletes a single registration
+        /// </summary>
+        /// <param name="r"></param>
+        public static void Delete(Registration r) 
+        {
+            SqlConnection connection = DBHelper.GetConnection();
 
-        //TODO: Add delete method
+            string query = "DELETE FROM Registration " +
+                           "WHERE CustomerID = @CustomerID";
+
+            SqlCommand deleteCommand = new SqlCommand(query, connection);
+
+            deleteCommand.Parameters.AddWithValue("@CustomerID", r);
+
+            try
+            {
+                connection.Open();
+
+                int rows = deleteCommand.ExecuteNonQuery();
+
+                if (rows == 0)
+                {
+                    throw new Exception("No registration was deleted");
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine(ex.GetType().ToString());
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+                throw ex;
+            }
+            finally
+            {
+                //Ensure the connection is closed and the object is deleted
+                connection.Dispose();
+            }
+        }
     }
 }
