@@ -23,5 +23,10 @@ namespace BookRegistration
         /// Date of the book's registration
         /// </summary>
         public DateTime RegDate { get; set; }
+
+        public override string ToString()
+        {
+            return $"CustomerID: {CustomerID}        Book ISBN: {ISBN}            Registration Date: {RegDate}";
+        }
     }
 }
