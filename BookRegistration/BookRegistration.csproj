@@ -91,6 +91,12 @@
       <DependentUpon>RegisterConfirmationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Registration.cs" />
+    <Compile Include="ShowAllRegisteredForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowAllRegisteredForm.Designer.cs">
+      <DependentUpon>ShowAllRegisteredForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddBookForm.resx">
       <DependentUpon>AddBookForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterConfirmationForm.resx">
       <DependentUpon>RegisterConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowAllRegisteredForm.resx">
+      <DependentUpon>ShowAllRegisteredForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
