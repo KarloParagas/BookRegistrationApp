@@ -29,6 +29,28 @@ namespace BookRegistration
         }
 
         /// <summary>
+        /// Enables the edit customer button, if user selects a customer from the combo box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void customerComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            editCustomerBtn.Enabled = true;
+            deleteCustomerBtn.Enabled = true;
+        }
+
+        /// <summary>
+        /// Enables the edit book button, if user selects a book from the combo box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bookComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            editBookBtn.Enabled = true;
+            deleteBookBtn.Enabled = true;
+        }
+
+        /// <summary>
         /// Pops up an add customer dialog box so user can add a customer to the database
         /// </summary>
         /// <param name="sender"></param>
@@ -181,28 +203,6 @@ namespace BookRegistration
             }
         }
 
-        /// <summary>
-        /// Enables the edit customer button, if user selects a customer from the combo box
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void customerComboBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            editCustomerBtn.Enabled = true;
-            deleteCustomerBtn.Enabled = true;
-        }
-
-        /// <summary>
-        /// Enables the edit book button, if user selects a book from the combo box
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void bookComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            editBookBtn.Enabled = true;
-            deleteBookBtn.Enabled = true;
-        }
-
         private void EditCustomerBtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(customerComboBox.Text)) 
@@ -234,6 +234,12 @@ namespace BookRegistration
 
         private void DeleteCustomerBtn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(customerComboBox.Text)) 
+            {
+                MessageBox.Show("Please select a customer");
+                return;
+            }
+
             //Get the selected customer
             Customer selectedCustomer = (Customer)customerComboBox.SelectedItem;
 
@@ -267,8 +273,6 @@ namespace BookRegistration
                     MessageBox.Show("No customers deleted");
                 }
             }
-
-            //TODO: If the customer to be deleted currently has a registration in the database, delete their registration as well
         }
 
         private void EditBookBtn_Click(object sender, EventArgs e)
@@ -300,6 +304,12 @@ namespace BookRegistration
 
         private void DeleteBookBtn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(bookComboBox.Text)) 
+            {
+                MessageBox.Show("Please select a book");
+                return;
+            }
+
             //Get the selected book
             Book selectedBook = (Book)bookComboBox.SelectedItem;
 
@@ -335,8 +345,6 @@ namespace BookRegistration
                     MessageBox.Show("No books deleted");
                 }
             }
-
-            //TODO: If the book to be deleted currently has a registration in the database, delete its registration as well
         }
 
         /// <summary>
