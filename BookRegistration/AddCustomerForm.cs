@@ -86,14 +86,13 @@ namespace BookRegistration
         {
             string userInput = titleTxt.Text;
 
-            if (userInput == "Mr" || userInput == "Ms" || userInput == "Mrs" ||
-                userInput == "Dr" || userInput == "Sr" || userInput == "Jr")
+            if (userInput == "Mr" || userInput == "Ms" || userInput == "Dr")
             {
                 return true;
             }
             else 
             {
-                MessageBox.Show("Please provide a valid title (i.e. Mr, Ms, Mrs, Dr, Sr, Jr) ");
+                MessageBox.Show("Please provide a valid title (i.e. Mr, Ms, Dr) ");
                 return false;
             }
         }
