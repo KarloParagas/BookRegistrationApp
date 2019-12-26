@@ -55,7 +55,7 @@
             this.customerComboBox.Name = "customerComboBox";
             this.customerComboBox.Size = new System.Drawing.Size(200, 21);
             this.customerComboBox.TabIndex = 0;
-            this.customerComboBox.SelectedValueChanged += new System.EventHandler(this.customerComboBox_SelectedValueChanged);
+            this.customerComboBox.SelectedValueChanged += new System.EventHandler(this.CustomerComboBox_SelectedValueChanged);
             // 
             // bookComboBox
             // 
@@ -64,7 +64,7 @@
             this.bookComboBox.Name = "bookComboBox";
             this.bookComboBox.Size = new System.Drawing.Size(200, 21);
             this.bookComboBox.TabIndex = 2;
-            this.bookComboBox.SelectedIndexChanged += new System.EventHandler(this.bookComboBox_SelectedIndexChanged);
+            this.bookComboBox.SelectedIndexChanged += new System.EventHandler(this.BookComboBox_SelectedIndexChanged);
             // 
             // addCustomerButton
             // 
@@ -74,7 +74,7 @@
             this.addCustomerButton.TabIndex = 1;
             this.addCustomerButton.Text = "Add Customer";
             this.addCustomerButton.UseVisualStyleBackColor = true;
-            this.addCustomerButton.Click += new System.EventHandler(this.addCustomerButton_Click);
+            this.addCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
             // 
             // addBookButton
             // 
@@ -84,7 +84,7 @@
             this.addBookButton.TabIndex = 3;
             this.addBookButton.Text = "Add Book";
             this.addBookButton.UseVisualStyleBackColor = true;
-            this.addBookButton.Click += new System.EventHandler(this.addBookButton_Click);
+            this.addBookButton.Click += new System.EventHandler(this.AddBookButton_Click);
             // 
             // registerProductButton
             // 
@@ -94,7 +94,7 @@
             this.registerProductButton.TabIndex = 5;
             this.registerProductButton.Text = "Register Product";
             this.registerProductButton.UseVisualStyleBackColor = true;
-            this.registerProductButton.Click += new System.EventHandler(this.registerProductButton_Click);
+            this.registerProductButton.Click += new System.EventHandler(this.RegisterProductButton_Click);
             // 
             // editCustomerBtn
             // 

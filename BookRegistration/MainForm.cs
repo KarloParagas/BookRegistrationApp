@@ -33,10 +33,12 @@ namespace BookRegistration
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void customerComboBox_SelectedValueChanged(object sender, EventArgs e)
+        private void CustomerComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
             editCustomerBtn.Enabled = true;
             deleteCustomerBtn.Enabled = true;
+
+            PopulateBookList();
         }
 
         /// <summary>
@@ -44,7 +46,7 @@ namespace BookRegistration
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void bookComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void BookComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             editBookBtn.Enabled = true;
             deleteBookBtn.Enabled = true;
@@ -55,7 +57,7 @@ namespace BookRegistration
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void addCustomerButton_Click(object sender, EventArgs e)
+        private void AddCustomerButton_Click(object sender, EventArgs e)
         {
             //Create an add customer object
             AddCustomerForm addCustomer = new AddCustomerForm();
@@ -81,7 +83,7 @@ namespace BookRegistration
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void addBookButton_Click(object sender, EventArgs e)
+        private void AddBookButton_Click(object sender, EventArgs e)
         {
             //Create an add book object
             AddBookForm addBook = new AddBookForm();
@@ -113,9 +115,9 @@ namespace BookRegistration
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void registerProductButton_Click(object sender, EventArgs e)
+        private void RegisterProductButton_Click(object sender, EventArgs e)
         {
-            if (isSelectionValid() == true) 
+            if (IsSelectionValid() == true) 
             {
                 //Create a RegistrationConfirmationForm object
                 RegisterConfirmationForm confirm = new RegisterConfirmationForm();
@@ -162,7 +164,7 @@ namespace BookRegistration
         /// Checks if user selects a valid customer and book
         /// </summary>
         /// <returns></returns>
-        private bool isSelectionValid()
+        private bool IsSelectionValid()
         {
             //If user doesn't select anything
             if (customerComboBox.Text == "" || bookComboBox.Text == "" ) 
@@ -190,11 +192,11 @@ namespace BookRegistration
 
         private void PopulateBookList()
         {
-            //Populate the list of books from the database
+            //Populate the allBooks list of books from the database
             List<Book> allBooks = BookDB.GetAllBooks();
 
             //Start with an empty list, so it doesn't re-add previous books causing duplicates
-            bookComboBox.Items.Clear();      
+            bookComboBox.Items.Clear();
 
             //Adds all of the books from the database in the bookComboBox
             foreach (Book b in allBooks)
