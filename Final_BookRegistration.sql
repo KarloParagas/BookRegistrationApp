@@ -12,7 +12,7 @@ GO
 
 CREATE TABLE Customer
 (
-	CustomerID	int	PRIMARY KEY IDENTITY
+	CustomerID  int	PRIMARY KEY IDENTITY
 	,DateOfBirth	date	NOT NULL
 	,FirstName	varchar(30)	NOT NULL
 	,LastName	varchar(35)	NOT NULL

@@ -15,7 +15,7 @@ namespace BookRegistration
         /// <returns></returns>
         public static SqlConnection GetConnection() 
         {
-            string connection = @"Data Source=DESKTOP-G42KM3D\SQLEXPRESS;" +
+            string connection = @"Data Source=(localdb)\MSSQLLocalDB;" +
                 "Initial Catalog=BookRegistration;" +
                 "Integrated Security=True;";
 
